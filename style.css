@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  overflow-x: hidden;
+  background-color: #333333;
+  color: #181616;
+  margin: 0;
+}
+
+.container {
+  background-color: white;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  height: 100w;
+  min-width: 100%;
+  margin: 0px;
+  padding: 60px;
+}
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+.circle-container {
+  position: fixed;
+  left: -100px;
+  top: -100px;
+}
+
+.circle {
+  background-color: rgb(83, 187, 187);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+}
+.btn {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  height: 100px;
+
+  cursor: pointer;
+}
+.circle button:focus {
+  outline: none;
+}
+.circle button#open {
+  left: 60%;
+}
+.circle button#home {
+  left: 10%;
+  top: 10%;
+  transform: rotate(160deg);
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+.content {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+.content img {
+  max-width: 100%;
+}
+.content h4 {
+  padding-top: 10px;
+  font-size: 35px;
+  margin: 0px;
+}
+.content small {
+  font-size: 12px;
+  font-style: italic;
+  color: grey;
+}
+.content p {
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.content h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: rgb(38, 65, 65);
+}
+nav {
+  position: fixed;
+  bottom: 50px;
+  left: 0px;
+}
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+nav ul li {
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin: 30px auto;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in;
+  cursor: pointer;
+}
+nav ul li i {
+  font-size: 20px;
+  color: rgb(255, 254, 254);
+  margin-right: 10px;
+}
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+.search {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  display: flex;
+}
+.search .form {
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 2px solid rgb(83, 187, 187);
+  position: relative;
+  transition: width 0.3s ease;
+  outline: none;
+}
+.search .btn-1 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  font-size: 15px;
+  border: 2px solid rgb(83, 187, 187);
+  color: black;
+  outline: none;
+  cursor: pointer;
+}
+
+.search.active .form {
+  width: 200px;
+}
+.search.active .btn-1 {
+  transform: translateX(198px);
+}
+.container {
+  z-index: -1;
+  filter: blur(70px);
+}
+.textloaading {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  font-size: 50px;
+  color: black;
+  opacity: 1;
+}
+.login {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  font-family: inherit;
+  transform: translateX(-50%);
+  background-color: rgba(73, 187, 187, 0.315);
+  padding: 20px;
+  width: 350px;
+  border-radius: 5px;
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.login h4 {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+.form-controll {
+  background: transparent;
+  padding: 20px;
+  margin: 10px;
+
+  position: relative;
+}
+.form-controll .input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+
+  display: block;
+  width: 100%;
+  color: white;
+  padding: 10px;
+}
+.form-controll .input:focus,
+.form-controll .input:valid {
+  outline: none;
+  border-bottom-color: aquamarine;
+}
+
+.login-btn {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+}
+.login-btn:focus {
+  outline: none;
+}
+.login-btn:active {
+  transform: scale(0.98);
+}
+.login p {
+  color: white;
+  margin-top: 20px;
+}
+.login a {
+  color: aquamarine;
+}
+.form-controll label {
+  position: absolute;
+  color: white;
+  left: 18px;
+  top: 15px;
+}
+
+.form-controll label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.6, -0.55, 0.265, 1.55);
+}
+.form-controll input:focus + label span,
+.form-controll input:valid + label span {
+  color: aquamarine;
+  transform: translateY(-30px);
+}
+
+.container.show_login {
+  transform: rotate(-90deg);
+}
